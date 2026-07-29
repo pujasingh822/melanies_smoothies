@@ -1,8 +1,7 @@
 # Streamlit smoothie order form with emoji title
 # Co-authored with CoCo
 # Import python packages
-import streamlit as st
-import requests 
+import streamlit as st 
 #from snowflake.snowpark.context import get_active_session
 import os
 from snowflake.snowpark.functions import col,when_matched
@@ -45,6 +44,7 @@ if  ingredients_list:
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
   
+import requests  
 smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
 st.text(smoothiefroot_response)
 
